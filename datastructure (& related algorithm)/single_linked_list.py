@@ -5,6 +5,9 @@
 # linked list is a structure that has at least two fields:
 # the data and the address of the next node. 
 
+import os
+cls = lambda: os.system('cls')
+
 MAX_SIZE_LIST = 1000
 
 class Node:
@@ -20,7 +23,7 @@ class LinkedList:
     def add(self, data, pos = count):
         if self.count >= MAX_SIZE_LIST or pos < 0:
             print("Can not insert")
-            return None
+            return False
         if self.head or pos == 0:
             tmp = self.head
             self.head = Node(data,tmp)
@@ -34,7 +37,7 @@ class LinkedList:
             curr = Node(data,post)
             tmp.next = curr
         self.count += 1
-        return self.head
+        return True
     
     def remove(self, data):
         if self.head is None:
@@ -60,7 +63,7 @@ class LinkedList:
             return True
 
         if curr.next is None:
-            print("Can not find", data)
+            print("Not found", data)
             return False
         
     def search(self, data):
@@ -75,7 +78,6 @@ class LinkedList:
             return tmp
 
         if tmp.next is None:
-            print("Can not find", data)
             return None
 
     def reverse(self):
@@ -86,9 +88,9 @@ class LinkedList:
             nxt = curr.next
             curr.next = pre
             pre = curr
-            curr = nxt
-        
+            curr = nxt        
         self.head = pre
+
         
 
     def printlist(self):
@@ -99,14 +101,49 @@ class LinkedList:
             tmp = tmp.next
         print("\n" + "-"*20)
 
+def printMenu():
+    print("-"*50 + "\n \"i <data>\" to insert\n \
+\"d <data>\" to delete\n \
+\"s <data> \" to search\n \
+\"r\" to reverse list\n \
+\"p\" to printlist\n \
+\"l\" to clear screen\n \
+\"x\" to exit\n" + "-"*50)
 
-l = LinkedList()
-l.add(1)
-l.add(5)
-l.add(6)
-l.add(2)
-l.printlist()
-l.remove(1)
-l.printlist()
-l.reverse()
-l.printlist()
+myList = LinkedList()
+
+printMenu()
+
+while True:
+    inp = input().split()
+    opt = inp[0]
+    if opt == 'i':
+        try:
+            dt = inp[1]
+            print("Insert " + dt + " successful" if myList.add(dt) else "Insert fail")
+        except:
+            print("Error")
+    elif opt == 'd':
+        try:
+            dt = inp[1]
+            print("Delete " + dt + " successful" if myList.remove(dt) else "Delete fail")
+        except:
+            print("Error")
+    elif opt == 's':
+        try:
+            dt = inp[1]
+            print("Found " + dt if myList.search(dt) else "Not found " + dt)
+        except:
+            print("Error")
+    elif opt == 'r':
+        myList.reverse()
+        print("Reversed")
+    elif opt == 'p':
+        myList.printlist()
+    elif opt == 'l':
+        cls()
+        printMenu()
+    elif opt == 'x':
+        break
+    else:
+        print("Invalid input")
