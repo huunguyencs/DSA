@@ -16,41 +16,45 @@ class Node:
         self.next = next
 
 class LinkedList:
-    count = 0
     def __init__(self, head = None):
-        self.head = head
+        self.__head = head
+        self.__count = 0
 
-    def add(self, data, pos = count):
-        if self.count >= MAX_SIZE_LIST or pos < 0:
+    def getHead(self):
+        return self.__head
+
+    def add(self, data, pos = None):
+        pos = self.__count if pos is None else pos
+        if self.__count >= MAX_SIZE_LIST or pos < 0:
             print("Can not insert")
             return False
-        if self.head or pos == 0:
-            tmp = self.head
-            self.head = Node(data,tmp)
+        if self.__head or pos == 0:
+            tmp = self.__head
+            self.__head = Node(data,tmp)
         else:
             i = 0
-            tmp = self.head
-            while i < pos and i < self.count:
+            tmp = self.__head
+            while i < pos and i < self.__count:
                 tmp = tmp.next
                 i += 1
             post = tmp.next
             curr = Node(data,post)
             tmp.next = curr
-        self.count += 1
+        self.__count += 1
         return True
     
     def remove(self, data):
-        if self.head is None:
+        if self.__head is None:
             print("List is empty")
             return False
-        if self.head.data == data: # Remove head
-            tmp = self.head
-            self.head = tmp.next
+        if self.__head.data == data: # Remove head
+            tmp = self.__head
+            self.__head = tmp.next
             del tmp
-            self.count -= 1
+            self.__count -= 1
             return True
 
-        curr = self.head
+        curr = self.__head
         pre = curr
         while curr.data != data and curr.next is not None:
             pre = curr
@@ -59,7 +63,7 @@ class LinkedList:
         if curr.data == data: # Remove middle and tail
             pre.next = curr.next
             del curr
-            self.count -= 1
+            self.__count -= 1
             return True
 
         if curr.next is None:
@@ -67,10 +71,10 @@ class LinkedList:
             return False
         
     def search(self, data):
-        if self.head is None:
+        if self.__head is None:
             print("List is empty")
             return None
-        tmp = self.head
+        tmp = self.__head
         while tmp.data != data and tmp.next is not None:
             tmp = tmp.next
 
@@ -82,24 +86,26 @@ class LinkedList:
 
     def reverse(self):
         pre = None
-        curr = self.head
+        curr = self.__head
         nxt = None
         while curr is not None:
             nxt = curr.next
             curr.next = pre
             pre = curr
             curr = nxt        
-        self.head = pre
+        self.__head = pre
 
-        
 
     def printlist(self):
-        tmp = self.head
-        print("-"*20 + "\nSize: " + str(self.count) + "\nList:",end=" ")
+        tmp = self.__head
+        print("-"*20 + "\nSize: " + str(self.__count) + "\nList:",end=" ")
         while tmp is not None:
             print(tmp.data, end = " ")
             tmp = tmp.next
         print("\n" + "-"*20)
+
+    def getSize(self):
+        return self.__count
 
 def printMenu():
     print("-"*50 + "\n \"i <data>\" to insert\n \

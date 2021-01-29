@@ -19,3 +19,28 @@
     + Reverse list:<br><br>    
     <img src="./img-md/reverse_linked_list.gif" width="500px">
     <br><br>
+
+## Stack:
+
+- Definition: A stack of elements of type T is a finite sequence of elements of T, in which all insertions and deletions are restricted to one end, called the top. Stack is a Last In - First Out (LIFO) data structure. (LIFO: The last item put on the stack is the first item that can be taken off.)
+
+- Methods:
+    + Push:<br><br>
+    <img src="" width="500px">
+    <br><br>
+    + Pop:<br><br>
+    <img src="" width="500px">
+    <br><br>
+
+## Queue:
+
+- Definition: A queue of elements of type T is a finite sequence of elements of T, in which data can only be inserted at one end called the rear, and deleted from the other end called the front. Queue is a First In - First Out (FIFO) data structure. (FIFO: The first item stored in the queue is the first item that can be taken out.)
+
+- Methods:
+    + Enqueue:<br><br>
+    <img src="" width="500px">
+    <br><br>
+    + Dequeue:<br><br>
+    <img src="" width="500px">
+    <br><br>
+
