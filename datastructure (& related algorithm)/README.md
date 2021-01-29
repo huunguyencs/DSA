@@ -8,10 +8,10 @@
 ![Node](./img-md/node_linked_list.png)
 - Methods:
     + Add node:<br>
-    ![Insert node](./img-md/insert_linked_list.png)
+    ![Insert node](./img-md/insert_linked_list.png =100x)
     + Delete node:<br>
-    ![Delete node](./img-md/delete_linked_list.png)
+    ![Delete node](./img-md/delete_linked_list.png =100x)
     + Searching:<br>
-    ![Searching](./img-md/searching_linked_list.png)
+    ![Searching](./img-md/searching_linked_list.png =100x)
     + Reverse list:<br>
-    ![Reverse list](./img-md/reverse_linked_list.gif)
+    ![Reverse list](./img-md/reverse_linked_list.gif =100x)
