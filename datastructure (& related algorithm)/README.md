@@ -26,10 +26,10 @@
 
 - Methods:
     + Push:<br><br>
-    <img src="" width="500px">
+    <img src="./img/push_stack.png" width="500px">
     <br><br>
     + Pop:<br><br>
-    <img src="" width="500px">
+    <img src="./img/pop_stack.png" width="500px">
     <br><br>
 
 ## Queue:
@@ -38,9 +38,9 @@
 
 - Methods:
     + Enqueue:<br><br>
-    <img src="" width="500px">
+    <img src="./img/enqueue.png" width="500px">
     <br><br>
     + Dequeue:<br><br>
-    <img src="" width="500px">
+    <img src="./img/dequeue.png" width="500px">
     <br><br>
 
