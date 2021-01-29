@@ -8,14 +8,14 @@
 ![Node](./img-md/node_linked_list.png)
 - Methods:
     + Add node:<br><br>
-    <img src="./img-md/insert_linked_list.png" width="300px">
+    <img src="./img-md/insert_linked_list.png" width="500px">
     <br><br>
     + Delete node:<br><br>
-    <img src="./img-md/delete_linked_list.png" width="300px">
+    <img src="./img-md/delete_linked_list.png" width="500px">
     <br><br>
     + Searching:<br><br>
-    <img src="./img-md/searching_linked_list.png" width="300px">
+    <img src="./img-md/searching_linked_list.png" width="500px">
     <br><br>
     + Reverse list:<br><br>    
-    <img src="./img-md/reverse_linked_list.gif" width="300px">
+    <img src="./img-md/reverse_linked_list.gif" width="500px">
     <br><br>
