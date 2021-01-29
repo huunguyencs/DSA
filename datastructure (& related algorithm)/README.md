@@ -10,12 +10,15 @@
     + Add node:<br><br>
     <img src="./img-md/insert_linked_list.png" width="500px">
     <br><br>
+
     + Delete node:<br><br>
     <img src="./img-md/delete_linked_list.png" width="500px">
     <br><br>
+
     + Searching:<br><br>
     <img src="./img-md/searching_linked_list.png" width="500px">
     <br><br>
+    
     + Reverse list:<br><br>    
     <img src="./img-md/reverse_linked_list.gif" width="500px">
     <br><br>
@@ -28,6 +31,7 @@
     + Push:<br><br>
     <img src="./img-md/push_stack.png" width="500px">
     <br><br>
+
     + Pop:<br><br>
     <img src="./img-md/pop_stack.png" width="500px">
     <br><br>
@@ -40,6 +44,7 @@
     + Enqueue:<br><br>
     <img src="./img-md/enqueue.png" width="500px">
     <br><br>
+
     + Dequeue:<br><br>
     <img src="./img-md/dequeue.png" width="500px">
     <br><br>
