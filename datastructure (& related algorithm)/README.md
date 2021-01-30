@@ -6,6 +6,7 @@
     + The elements in a linked list are called **nodes**
     + A **node** in a linked list is a structure that has at least two fields: the data and the address of the next node.<br><br>
 ![Node](./img-md/node_linked_list.png)
+
 - Methods:
     + Add node:<br><br>
     <img src="./img-md/insert_linked_list.png" width="500px">
@@ -22,6 +23,10 @@
     + Reverse list:<br><br>    
     <img src="./img-md/reverse_linked_list.gif" width="500px">
     <br><br>
+- Applications:
+    + Implement stack, queue, graphs, ...
+    + Dynamic list
+    + ...
 
 ## Stack:
 
@@ -36,6 +41,12 @@
     <img src="./img-md/pop_stack.png" width="500px">
     <br><br>
 
+- Applications:
+    + Reversing data items (Reverse a list, convert decimal to binary, ...)
+    + Parsing (brackets parse, ...)
+    + Postponement of processing data items (Infix to Postfix Transformation, Evaluate a Postfix Expression, ...)
+    + Backtracking
+
 ## Queue:
 
 - Definition: A queue of elements of type T is a finite sequence of elements of T, in which data can only be inserted at one end called the rear, and deleted from the other end called the front. Queue is a First In - First Out (FIFO) data structure. (FIFO: The first item stored in the queue is the first item that can be taken out.)
@@ -49,3 +60,9 @@
     <img src="./img-md/dequeue.png" width="500px">
     <br><br>
 
+- Applications:
+    + Polynomial Arithmetic
+    + Categorizing Data
+    + Evaluate a Prefix Expression
+    + Redix Sort
+    + Queue Simulation
