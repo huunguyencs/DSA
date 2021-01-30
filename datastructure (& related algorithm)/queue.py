@@ -20,22 +20,41 @@ class Queue:
         self.__count = 0
 
     def dequeue(self):
-        pass
+        if self.isEmpty():
+            return None
+        head = self.__head
+        self.__head = head.next
+        self.__count -= 1
+        return head.data
     
     def enqueue(self, data):
-        pass
+        if self.__count >= MAX_SIZE_QUEUE:
+            return False
+        tail = Node(data)
+        if self.isEmpty():
+            self.__head = self.__tail = tail
+        else:
+            self.__tail.next = tail
+            self.__tail = tail
+        self.__count += 1
+        return True
 
     def getQueueFront(self):
-        pass
+        return self.__head
 
     def getQueueRear(self):
-        pass
+        return self.__tail
 
     def isEmpty(self):
-        pass
+        return self.__count == 0
 
     def getSize(self):
-        pass
+        return self.__count
 
     def printQueue(self):
-        pass
+        head = self.__head
+        print("-"*20 + "\nSize: " + str(self.__count) + "\nQueue:",end=" ")
+        while head is not None:
+            print(head.data, end = " ")
+            head = head.next
+        print("\n" + "-"*20)
