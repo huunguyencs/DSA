@@ -28,7 +28,7 @@ class Queue:
         return head.data
     
     def enqueue(self, data):
-        if self.__count >= MAX_SIZE_QUEUE:
+        if self.isFull():
             return False
         tail = Node(data)
         if self.isEmpty():
@@ -38,6 +38,9 @@ class Queue:
             self.__tail = tail
         self.__count += 1
         return True
+
+    def isFull(self):
+        return self.__count >= MAX_SIZE_QUEUE
 
     def getQueueFront(self):
         return self.__head
