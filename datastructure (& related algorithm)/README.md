@@ -31,6 +31,7 @@
 ## Stack:
 
 - Definition: A stack of elements of type T is a finite sequence of elements of T, in which all insertions and deletions are restricted to one end, called the top. Stack is a Last In - First Out (LIFO) data structure. (LIFO: The last item put on the stack is the first item that can be taken off.)
+<img src="./img-md/stack.png" width="500px">
 
 - Methods:
     + Push:<br><br>
@@ -50,6 +51,7 @@
 ## Queue:
 
 - Definition: A queue of elements of type T is a finite sequence of elements of T, in which data can only be inserted at one end called the rear, and deleted from the other end called the front. Queue is a First In - First Out (FIFO) data structure. (FIFO: The first item stored in the queue is the first item that can be taken out.)
+<img src="./img-md/queue.png" width="500px">
 
 - Methods:
     + Enqueue:<br><br>
