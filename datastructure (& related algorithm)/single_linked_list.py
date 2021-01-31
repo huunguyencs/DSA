@@ -20,26 +20,32 @@ class LinkedList:
         self.__head = head
         self.__count = 0
 
+    def isEmpty(self):
+        return self.__count == 0
+
     def getHead(self):
         return self.__head
 
     def add(self, data, pos = None):
         pos = self.__count if pos is None else pos
+        print(pos)
         if self.__count >= MAX_SIZE_LIST or pos < 0:
             print("Can not insert")
             return False
-        if self.__head or pos == 0:
+        if self.isEmpty() or pos == 0:
             tmp = self.__head
             self.__head = Node(data,tmp)
         else:
+            print("insert")
             i = 0
             tmp = self.__head
-            while i < pos and i < self.__count:
+            while i < pos - 1 and i < self.__count:
                 tmp = tmp.next
                 i += 1
             post = tmp.next
             curr = Node(data,post)
             tmp.next = curr
+            
         self.__count += 1
         return True
     
@@ -107,49 +113,49 @@ class LinkedList:
     def getSize(self):
         return self.__count
 
-# def printMenu():
-#     print("-"*50 + "\n \"i <data>\" to insert\n \
-# \"d <data>\" to delete\n \
-# \"s <data> \" to search\n \
-# \"r\" to reverse list\n \
-# \"p\" to printlist\n \
-# \"l\" to clear screen\n \
-# \"x\" to exit\n" + "-"*50)
+def printMenu():
+    print("-"*50 + "\n \"i <data>\" to insert\n \
+\"d <data>\" to delete\n \
+\"s <data> \" to search\n \
+\"r\" to reverse list\n \
+\"p\" to printlist\n \
+\"l\" to clear screen\n \
+\"x\" to exit\n" + "-"*50)
 
-# myList = LinkedList()
+myList = LinkedList()
 
-# printMenu()
+printMenu()
 
-# while True:
-#     inp = input().split()
-#     opt = inp[0]
-#     if opt == 'i':
-#         try:
-#             dt = inp[1]
-#             print("Insert " + dt + " successful" if myList.add(dt) else "Insert fail")
-#         except:
-#             print("Error")
-#     elif opt == 'd':
-#         try:
-#             dt = inp[1]
-#             print("Delete " + dt + " successful" if myList.remove(dt) else "Delete fail")
-#         except:
-#             print("Error")
-#     elif opt == 's':
-#         try:
-#             dt = inp[1]
-#             print("Found " + dt if myList.search(dt) else "Not found " + dt)
-#         except:
-#             print("Error")
-#     elif opt == 'r':
-#         myList.reverse()
-#         print("Reversed")
-#     elif opt == 'p':
-#         myList.printlist()
-#     elif opt == 'l':
-#         cls()
-#         printMenu()
-#     elif opt == 'x':
-#         break
-#     else:
-#         print("Invalid input")
+while True:
+    inp = input().split()
+    opt = inp[0]
+    if opt == 'i':
+        try:
+            dt = inp[1]
+            print("Insert " + dt + " successful" if myList.add(dt) else "Insert fail")
+        except:
+            print("Error")
+    elif opt == 'd':
+        try:
+            dt = inp[1]
+            print("Delete " + dt + " successful" if myList.remove(dt) else "Delete fail")
+        except:
+            print("Error")
+    elif opt == 's':
+        try:
+            dt = inp[1]
+            print("Found " + dt if myList.search(dt) else "Not found " + dt)
+        except:
+            print("Error")
+    elif opt == 'r':
+        myList.reverse()
+        print("Reversed")
+    elif opt == 'p':
+        myList.printlist()
+    elif opt == 'l':
+        cls()
+        printMenu()
+    elif opt == 'x':
+        break
+    else:
+        print("Invalid input")
