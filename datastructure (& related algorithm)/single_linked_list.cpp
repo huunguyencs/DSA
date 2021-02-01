@@ -5,61 +5,13 @@
 // linked list is a structure that has at least two fields:
 // the data and the address of the next node.
 
-#include <iostream>
-
-using namespace std;
-
-const int MAX_SIZE_LIST = 100;
-
+#include "list.h"
 
 template <class ItemType>
-class Node{
-    ItemType data;
-    Node<ItemType> *next;
-
+class LinkedList : public List<ItemType> {
 public:
-    Node(ItemType data){
-        this->data = data;
-        this->next = nullptr;
-    }
-
-    Node(ItemType data, Node<ItemType>* next){
-        this->data = data;
-        this->next = next;
-    }
-    ~Node(){
-
-    }
-    ItemType getData(){
-        return this->data;
-    }
-    void setData(ItemType data){
-        this->data = data;
-    }
-    Node<ItemType>* getNext(){
-        return this->next;
-    }
-    void setNext(Node<ItemType> *next){
-        this->next = next;
-    }
-};
-
-template <class ItemType>
-class LinkedList{
-    Node<ItemType> *head;
-    int count;
-public:
-    LinkedList(){
-        this->head = nullptr;
-        this->count = 0;
-    }
-    LinkedList(Node<ItemType>* head){
-        this->head = head;
-        this->count = 1;
-    }
-    ~LinkedList(){
-
-    }
+    LinkedList(Node<ItemType>* head = nullptr) : List<ItemType>(head) {}
+    ~LinkedList() {}
     bool insert(ItemType data, int pos = -1){
         pos = pos==-1?this->count:pos;
         if(this->isFull()){
@@ -124,41 +76,6 @@ public:
         }
         this->head = pre;
         return true;
-    }
-    Node<ItemType>* search(ItemType data){
-        Node<ItemType> *run = this->head;
-        while(run != nullptr && run->getData() != data){
-            run = run->getNext();
-        }
-        if(run->getData() == data){
-            return run;
-        }
-        cout<<"Not found "<<data<<endl;
-        return nullptr;
-    }
-    void print(){
-        Node<ItemType> *run = this->head;
-        cout<<"------------------------------------\nSize: "<<this->count<<"\nList: ";
-        bool flag = true;
-        while(run != nullptr){
-            if(flag) flag = false;
-            else cout<<"->";
-            cout<<run->getData();
-            run = run->getNext();
-        }
-        cout<<"\n------------------------------------\n";
-    }
-    int getSize(){
-        return this->count;
-    }
-    Node<ItemType> getHead(){
-        return this->head;
-    }
-    bool isEmpty(){
-        return this->count == 0;
-    }
-    bool isFull(){
-        return this->count >= MAX_SIZE_LIST;
     }
 };
 
