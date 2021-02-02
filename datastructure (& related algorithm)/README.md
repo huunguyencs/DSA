@@ -68,3 +68,35 @@
     + Evaluate a Prefix Expression
     + Redix Sort
     + Queue Simulation
+
+## Tree
+- Definition: A tree consists of finite set of elements, call **nodes**, and a finite set of directed lines, called **branches**, that connect the nodes.
+- Basic Tree Concepts:
+    + Degree of a node: the number of branches associated with the node.
+    + Indegree branch: directed branch toward the node.
+    + Outdegree branch: directed branch away from the node.
+    + The first node is called the **root**.
+    + Indegree of the root = 0, the indegree of another = 1.
+    + Out degree of a node = 0 or 1 or more.
+- Terms:
+    + A **root** is the first node with an indegree of zero.
+    + A **leaf** is any node with an outdegree of zero.
+    + A **internal node** is not a root or a leaf.
+    + A **parent** has an outdegree greater than zero.
+    + A **child** has an indegree of one -> a internal node is both a parent of a node and a child of another one.
+    + **Siblings** are two or more nodes with the same parent.
+    + For a given node, an **ancestor** is any node in the path from the root to the node.
+    + For a give node, an **descendent** is ant node in the paths from the node to a leaf.
+    + A **path** is a sequence of nodes in which each node is adjacent to the next node.
+    + The **level** of a node is its distance from the root -> Siblings are always at the same level.
+    + The **height** of a tree is the level of the leaf in the longest path from the root plus 1.
+    + A **subtree** is any connected structure below the root.
+    <br><br>
+    <img src="./img-md/tree.png" width="500px">
+    <br><br>
+- Applications:
+    + Representing hierarchical data.
+    + Storing data in a way that makes it easily searchable.
+    + Representing sorted lists of data.
+    + Network routing algorithms.
+
