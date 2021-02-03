@@ -54,6 +54,7 @@ protected:
     void prefix(Node<ItemType>*, void(*)(Node<ItemType>*));
     void infix(Node<ItemType>*, void(*)(Node<ItemType>*));
     void postfix(Node<ItemType>*, void(*)(Node<ItemType>*));
+    int height(Node<ItemType>*);
 public:
     BinaryTree(Node<ItemType>* root = nullptr){
         this->root = root;
@@ -73,6 +74,10 @@ public:
     }
     Node<ItemType>* getRoot(){
         return this->root;
+    }
+    void print();
+    int getHeight(){
+        return height(this->getRoot());
     }
 };
 
@@ -104,6 +109,20 @@ void BinaryTree<ItemType>::postfix(Node<ItemType>* root, void(*func)(Node<ItemTy
     postfix(root->getLeft(), func);
     postfix(root->getRight(), func);
     func(root);
+}
+
+template <typename ItemType>
+void BinaryTree<ItemType>::print(){
+    cout<<"Binary Tree:\n";
+}
+
+template <typename ItemType>
+int height(Node<ItemType>* subroot){
+    if (subroot == nullptr)
+        return 0;
+    int left = height(subroot->getLeft());
+    int right = height(subroot->getRight());
+    return left > right ? left + 1 : right + 1;
 }
 
 #endif

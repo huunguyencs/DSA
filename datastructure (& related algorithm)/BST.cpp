@@ -131,22 +131,22 @@ bool BinarySearchTree<ItemType>::remove(Node<ItemType>* &subroot, ItemType data)
     }
 }
 
-template <typename T>
-void print(Node<T>* t){
-    cout<<t->getData()<<" ";
-}
+// template <typename T>
+// void print(Node<T>* t){
+//     cout<<t->getData()<<" ";
+// }
 
-int main(int argc, char const *argv[])
-{
-    BinarySearchTree<int>* bst = new BinarySearchTree<int>();
-    bst->insert(5);
-    bst->insert(7);
-    bst->insert(8);
-    bst->insert(3);
-    bst->infix(print<int>);
-    cout<<endl;
-    bst->remove(3);
-    bst->infix(print<int>);
-    cout<<endl;
-    return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+//     BinarySearchTree<int>* bst = new BinarySearchTree<int>();
+//     bst->insert(5);
+//     bst->insert(7);
+//     bst->insert(8);
+//     bst->insert(3);
+//     bst->infix(print<int>);
+//     cout<<endl;
+//     bst->remove(3);
+//     bst->infix(print<int>);
+//     cout<<endl;
+//     return 0;
+// }
