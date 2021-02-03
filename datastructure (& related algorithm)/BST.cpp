@@ -12,8 +12,8 @@ class BinarySearchTree : public BinaryTree<ItemType> {
     Node<ItemType>* smallest(Node<ItemType>*);
     Node<ItemType>* largest(Node<ItemType>*);
     Node<ItemType>* search(Node<ItemType>*, ItemType);
-    void insert(Node<ItemType>*, ItemType);
-    bool remove(Node<ItemType>*, ItemType);
+    void insertBST(ItemType);
+    bool remove(Node<ItemType>* &, ItemType);
 public:
     Node<ItemType>* smallest(){
         if(this->isEmpty()) return nullptr;
@@ -28,7 +28,8 @@ public:
     }
     bool insert(ItemType data){
         try {
-            insert(this->root, data);
+            Node<ItemType>* &rRoot = this->root;
+            insertBST(data);
             return true;
         }
         catch(const char* msg){
@@ -76,49 +77,56 @@ Node<ItemType>* BinarySearchTree<ItemType>::search(Node<ItemType>* subroot, Item
 }
 
 template <typename ItemType>
-void BinarySearchTree<ItemType>::insert(Node<ItemType>* subroot, ItemType data){
-    if (subroot == nullptr) {
-        subroot = new Node<ItemType>(data);
+void BinarySearchTree<ItemType>::insertBST(ItemType data){
+    if(this->isEmpty()){
+        this->root = new Node<ItemType>(data);
+        return;
     }
-    ItemType rootData = subroot->getData();
-    if(rootData > data){
-        insert(subroot->getLeft(), data);
+    Node<ItemType>* run = this->root;
+    Node<ItemType>* parent;
+    while(run!=nullptr){
+        parent = run;
+        if (data < run->getData()){
+            run = run->getLeft();
+        }
+        else run = run->getRight();
     }
-    if(rootData < data){
-        insert(subroot->getRight(), data);
-    }
+    if(data < parent->getData())
+        parent->setLeft(new Node<ItemType>(data));
+    else
+        parent->setRight(new Node<ItemType>(data));
 }
 
 template <typename ItemType>
-bool BinarySearchTree<ItemType>::remove(Node<ItemType>* subroot, ItemType data){
+bool BinarySearchTree<ItemType>::remove(Node<ItemType>* &subroot, ItemType data){
     if(subroot == nullptr) return false;
     ItemType rootData = subroot->getData();
     if(rootData > data){
-        return remove(subroot->getLeft(), data);
+        return remove(subroot->refLeft(), data);
     }
     else if(rootData < data){
-        return remove(subroot->getRight(), data);
+        return remove(subroot->refRight(), data);
     }
     else{
         if(subroot->getLeft() == nullptr){
             Node<ItemType>* delPtr = subroot;
-            subroot = subroot->getRight();
+            subroot = subroot->refRight();
             delete delPtr;
             return true;
         }
         else if(subroot->getRight() == nullptr){
             Node<ItemType>* delPtr = subroot;
-            subroot = subroot->getLeft();
+            subroot = subroot->refLeft();
             delete delPtr;
             return true;
         }
         else{
             Node<ItemType>* delPtr = subroot->getLeft();
-            while(delPtr->getRight()!=nullptr){
+            while(delPtr->getRight() != nullptr){
                 delPtr = delPtr->getRight();
             }
             subroot->setData(delPtr->getData());
-            return remove(subroot->getLeft(),delPtr->getData());
+            return remove(subroot->refLeft(),delPtr->getData());
         }
     }
 }
@@ -135,6 +143,10 @@ int main(int argc, char const *argv[])
     bst->insert(7);
     bst->insert(8);
     bst->insert(3);
-    bst->infix(bst->getRoot(),print<int>);
+    bst->infix(print<int>);
+    cout<<endl;
+    bst->remove(3);
+    bst->infix(print<int>);
+    cout<<endl;
     return 0;
 }

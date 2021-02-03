@@ -39,40 +39,34 @@ public:
     Node<ItemType>* getRight(){
         return this->right;
     }
+    Node<ItemType>* &refLeft(){
+        return this->left;
+    }
+    Node<ItemType>* &refRight(){
+        return this->right;
+    }
 };
 
 template <typename ItemType>
 class BinaryTree{
 protected:
     Node<ItemType>* root;
+    void prefix(Node<ItemType>*, void(*)(Node<ItemType>*));
+    void infix(Node<ItemType>*, void(*)(Node<ItemType>*));
+    void postfix(Node<ItemType>*, void(*)(Node<ItemType>*));
 public:
     BinaryTree(Node<ItemType>* root = nullptr){
         this->root = root;
     }
     ~BinaryTree() {}
-    void infix(Node<ItemType>* root, void(*func)(Node<ItemType>*)){
-        if(root == nullptr){
-            return;
-        }
-        infix(root->getLeft(), func);
-        func(root);
-        infix(root->getRight(), func);
+    void infix(void(*func)(Node<ItemType>*)){
+        infix(this->getRoot(), func);
     }
-    void prefix(Node<ItemType>* root, void(*func)(Node<ItemType>*)){
-        if(root == nullptr){
-            return;
-        }
-        func(root);
-        prefix(root->getLeft(), func);
-        prefix(root->getRight(), func);
+    void prefix(void(*func)(Node<ItemType>*)){
+        prefix(this->getRoot(), func);
     }
-    void postfix(Node<ItemType>* root, void(*func)(Node<ItemType>*)){
-        if(root == nullptr){
-            return;
-        }
-        postfix(root->getLeft(), func);
-        postfix(root->getRight(), func);
-        func(root);
+    void postfix(void(*func)(Node<ItemType>*)){
+        postfix(this->getRoot(), func);
     }
     bool isEmpty(){
         return this->root == nullptr;
@@ -81,6 +75,36 @@ public:
         return this->root;
     }
 };
+
+template <typename ItemType>
+void BinaryTree<ItemType>::prefix(Node<ItemType>* root, void(*func)(Node<ItemType>*)){
+    if(root == nullptr){
+        return;
+    }
+    func(root);
+    prefix(root->getLeft(), func);
+    prefix(root->getRight(), func);
+};
+
+template <typename ItemType>
+void BinaryTree<ItemType>::infix(Node<ItemType>* root, void(*func)(Node<ItemType>*)){
+    if(root == nullptr){
+        return;
+    }
+    infix(root->getLeft(), func);
+    func(root);
+    infix(root->getRight(), func);
+}
+
+template <typename ItemType>
+void BinaryTree<ItemType>::postfix(Node<ItemType>* root, void(*func)(Node<ItemType>*)){
+    if(root == nullptr){
+        return;
+    }
+    postfix(root->getLeft(), func);
+    postfix(root->getRight(), func);
+    func(root);
+}
 
 #endif
 
