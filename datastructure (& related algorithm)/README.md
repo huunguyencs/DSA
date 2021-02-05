@@ -100,3 +100,14 @@
     + Representing sorted lists of data.
     + Network routing algorithms.
 
+## Binary Search Tree (BST)
+- Definition:
+- Methods:
+- Applications:
+
+
+## AVL Tree
+- Definition:
+- Methods:
+- Applications:
+
