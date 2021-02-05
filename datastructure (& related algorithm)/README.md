@@ -102,12 +102,30 @@
 
 ## Binary Search Tree (BST)
 - Definition:
-- Methods:
-- Applications:
+    A **binary search tree (BST)** is a binary tree with the following properties:
+    + All items in the left subtree are less than the root.
+    + All items in the right subtree are greater than or equal to the root.
+    + Each subtree is itself a BST.<br><br>
+    <img src="./img-md/BST.png" width="500px">
+    <br>
+
+-> BST is a Binary tree that is sorted tree.
 
 
 ## AVL Tree
 - Definition:
-- Methods:
-- Applications:
+    **AVL Tree** is:
+    + A Binary Search Tree,
+    + in which the heights of the left and right subtrees of the root differ by at most 1, and
+    + the left and right subtrees are again AVL trees.
 
+    Discovered by G.M.**A**del'son-**V**el'skii and E.M.**L**andis in 1962.
+    **AVL Tree** is a Binary Search tree that is balanced tree.
+
+    A binary tree is an **AVL Tree** if
+    + **Each node satisfies AST property**: key of the nodes is greater than the key of each node in its left subtree and is smaller than or equals to the key of each node in its right subtree.
+    + **Each node satisfies balanced tree property**: the difference between the heights of the left subtree and right subtree of the node does not exceed one.
+- Why AVL tree?
+    + When data elements are inserted in a BST in sorted order: 1, 2, 3, ... BST becomes a degenerate tree. Search operation takes O(n), which is inefficient.
+    + It is possible that affer a number of insert and delete operations, a binary tree may become unbalanced and inscrease in height.
+    + AVL trees ensure that the complexity of search is O(log_2(n)).
