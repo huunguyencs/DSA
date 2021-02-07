@@ -59,7 +59,6 @@ public:
     BinaryTree(Node<ItemType>* root = nullptr){
         this->root = root;
     }
-    ~BinaryTree() {}
     void infix(void(*func)(Node<ItemType>*)){
         infix(this->getRoot(), func);
     }
