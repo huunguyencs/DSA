@@ -24,6 +24,6 @@
 - Description:
     + The list is divided into 2 parts: **sorted** and **unsorted**.
     + In each pass, in the unsorted sublist, the smallest element is **selected** and **exchanged** with the first element.<br><br>
-    <img src="../img-md/selection.gif" width="500px">
+    <img src="../../img-md/selection.gif" width="500px">
     <br><br>
 - Efficiency: O(n^2)
