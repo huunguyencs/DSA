@@ -9,19 +9,19 @@
 
 - Methods:
     + Add node:<br><br>
-    <img src="./img-md/insert_linked_list.png" width="500px">
+    <img src="../img-md/insert_linked_list.png" width="500px">
     <br><br>
 
     + Delete node:<br><br>
-    <img src="./img-md/delete_linked_list.png" width="500px">
+    <img src="../img-md/delete_linked_list.png" width="500px">
     <br><br>
 
     + Searching:<br><br>
-    <img src="./img-md/searching_linked_list.png" width="500px">
+    <img src="../img-md/searching_linked_list.png" width="500px">
     <br><br>
     
     + Reverse list:<br><br>    
-    <img src="./img-md/reverse_linked_list.gif" width="500px">
+    <img src="../img-md/reverse_linked_list.gif" width="500px">
     <br><br>
 - Applications:
     + Implement stack, queue, graphs, ...
@@ -31,15 +31,15 @@
 ## Stack:
 
 - Definition: A stack of elements of type T is a finite sequence of elements of T, in which all insertions and deletions are restricted to one end, called the top. Stack is a Last In - First Out (LIFO) data structure. (LIFO: The last item put on the stack is the first item that can be taken off.)
-<img src="./img-md/stack.png" width="500px">
+<img src="../img-md/stack.png" width="500px">
 
 - Methods:
     + Push:<br><br>
-    <img src="./img-md/push_stack.png" width="500px">
+    <img src="../img-md/push_stack.png" width="500px">
     <br><br>
 
     + Pop:<br><br>
-    <img src="./img-md/pop_stack.png" width="500px">
+    <img src="../img-md/pop_stack.png" width="500px">
     <br><br>
 
 - Applications:
@@ -51,15 +51,15 @@
 ## Queue:
 
 - Definition: A queue of elements of type T is a finite sequence of elements of T, in which data can only be inserted at one end called the rear, and deleted from the other end called the front. Queue is a First In - First Out (FIFO) data structure. (FIFO: The first item stored in the queue is the first item that can be taken out.)
-<img src="./img-md/queue.png" width="500px">
+<img src="../img-md/queue.png" width="500px">
 
 - Methods:
     + Enqueue:<br><br>
-    <img src="./img-md/enqueue.png" width="500px">
+    <img src="../img-md/enqueue.png" width="500px">
     <br><br>
 
     + Dequeue:<br><br>
-    <img src="./img-md/dequeue.png" width="500px">
+    <img src="../img-md/dequeue.png" width="500px">
     <br><br>
 
 - Applications:
@@ -92,7 +92,7 @@
     + The **height** of a tree is the level of the leaf in the longest path from the root plus 1.
     + A **subtree** is any connected structure below the root.
     <br><br>
-    <img src="./img-md/tree.png" width="500px">
+    <img src="../img-md/tree.png" width="500px">
     <br><br>
 - Applications:
     + Representing hierarchical data.
@@ -106,7 +106,7 @@
     + All items in the left subtree are less than the root.
     + All items in the right subtree are greater than or equal to the root.
     + Each subtree is itself a BST.<br><br>
-    <img src="./img-md/BST.png" width="500px">
+    <img src="../img-md/BST.png" width="500px">
     <br>
 
 -> BST is a Binary tree that is sorted tree.
