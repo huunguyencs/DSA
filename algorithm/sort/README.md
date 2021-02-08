@@ -2,7 +2,7 @@
 - Description:
     + The list is divided into 2 parts: **sorted** and **unsorted**.
     + In each pass, the smallest element is **bubbled** from the unsorted sublist and moved to the sorted list.<br><br>
-    <img src="../img-md/bubble.gif" width="500px">
+    <img src="../../img-md/bubble.gif" width="500px">
     <br><br>
 - Efficiency: O(n^2)
 
@@ -12,7 +12,7 @@
 - Description:
     + The list is divided into 2 parts: **sorted** and **unsorted**.
     + In each pass, the fisrt element of the unsorted sublist is **inserted** into the sorted sublist.<br><br>
-    <img src="../img-md/insertion.gif" width="500px">
+    <img src="../../img-md/insertion.gif" width="500px">
     <br><br>
 - Efficiency: O(n^2)
 
