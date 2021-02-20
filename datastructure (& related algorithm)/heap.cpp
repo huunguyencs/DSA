@@ -99,11 +99,11 @@ bool Heap<T>::remove(T& dataOut){
 }
 
 
-int main(int argc, char const *argv[])
-{
-    int *x = new int[7]{1,7,8,9,4,6,5};
-    Heap<int>* h = new Heap<int>(x,7);
-    h->print();
+// int main(int argc, char const *argv[])
+// {
+//     int *x = new int[7]{1,7,8,9,4,6,5};
+//     Heap<int>* h = new Heap<int>(x,7);
+//     h->print();
 
-    return 0;
-}
+//     return 0;
+// }

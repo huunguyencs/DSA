@@ -129,3 +129,44 @@
     + When data elements are inserted in a BST in sorted order: 1, 2, 3, ... BST becomes a degenerate tree. Search operation takes O(n), which is inefficient.
     + It is possible that affer a number of insert and delete operations, a binary tree may become unbalanced and inscrease in height.
     + AVL trees ensure that the complexity of search is O(log_2(n)).
+
+## Heap
+- Definition:
+    A **heap** (max-heap) is a binary tree structure with the following properties:
+    + The tree is complete or nearly complete.
+    + The key value of each node is **greater than or equal to** the key value in each of its descendents.
+
+    A **min-heap** is a binary tree structure with the following properties:
+    + The tree complete or nearly complete.
+    + The key value of each node is **less than or equal to** the key value in each of its descendents.
+
+- Properties:
+    + A complete or nearly complete binary tree.
+    + If the height is *h*, the number of nodes N is between 2<sup>h-1</sup> and 2<sup>h</sup>-1.
+    + **Complete tree**: N = 2<sup>h</sup> - 1 when last level is full.
+    + **Nearly complete**: All nodes in the last level are on the left.
+
+    The relationship between a node and its children is fixed and can be calculated:
+    + For a node located at index *i*, its children are found at:
+        Left child: 2i + 1
+        Right child: 2i + 2
+    + The parent of a node located at index i is located at (i - 1)//2.
+    + Given the index for a left child, j, its right sibling, if any, is found at j + 1. Conversely. given the index for a right child, k, ites left sibling, which must exist, is found at k - 1.
+    + Given the size, N, of a complete heap, the location of the first left is N//2.
+    + Given the location of the first left element, the location of last nonleaf element is 1 less.
+
+- Methods:
+    + **ReheapUp**: The **reheapUp** operation repairs a "broken" heap by **floating the last element up** the tree until it is in its correct location in the heap. Complexity O(log<sub>2</sub>n)
+
+    + **ReheapDown**: The **reheapDown** operation repairs a "broken" heap by **push the root down** the tree until it is in its correct location in the heap. Complexity O(log<sub>2</sub>n)
+
+    + **Build a heap**. Complexity O(nlog<sub>2</sub>n)
+
+    + **Insert a Node into a Heap**. Complexity O(log<sub>2</sub>n)
+
+    + **Delete a Node from a Heap**. Complexity O(log<sub>2</sub>n)
+
+- Applications:
+    + **selection algorithms**,
+    + **priority queues**,
+    + and sorting.
