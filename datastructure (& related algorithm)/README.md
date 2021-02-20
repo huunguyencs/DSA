@@ -138,7 +138,7 @@
 
     A **min-heap** is a binary tree structure with the following properties:
     + The tree complete or nearly complete.
-    + The key value of each node is **less than or equal to** the key value in each of its descendents.
+    + The key value of each node is **less than or equal to** the key value in each of its descendents.<br><br>
 
     <img src="../img-md/heap.png" width="500px">
 
