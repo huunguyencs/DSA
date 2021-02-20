@@ -140,6 +140,8 @@
     + The tree complete or nearly complete.
     + The key value of each node is **less than or equal to** the key value in each of its descendents.
 
+    <img src="./img-md/heap.png" width="500px">
+
 - Properties:
     + A complete or nearly complete binary tree.
     + If the height is *h*, the number of nodes N is between 2<sup>h-1</sup> and 2<sup>h</sup>-1.
