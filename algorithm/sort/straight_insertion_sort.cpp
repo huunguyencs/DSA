@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     {
         cin >> arr[i];
     }
-    insertionSort(arr, size);
+    straight_insertion_sort(arr, size);
     for (int i = 0; i < size; i++)
     {
         cout << arr[i] << " ";
@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 }
 
 template <typename T>
-void insertionSort(T *&arr, int size)
+void straight_insertion_sort(T *&arr, int size)
 {
     if (size > 1)
     {

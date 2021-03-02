@@ -1,14 +1,7 @@
-## Bubble sort
-- Description:
-    + The list is divided into 2 parts: **sorted** and **unsorted**.
-    + In each pass, the smallest element is **bubbled** from the unsorted sublist and moved to the sorted list.<br><br>
-    <img src="../../img-md/bubble.gif" width="100px">
-    <br><br>
-- Efficiency: O(n^2)
+# Insertion Sort
 
-## Heap sort
+## Straight Insertion Sort
 
-## Insertion sort
 - Description:
     + The list is divided into 2 parts: **sorted** and **unsorted**.
     + In each pass, the fisrt element of the unsorted sublist is **inserted** into the sorted sublist.<br><br>
@@ -16,14 +9,34 @@
     <br><br>
 - Efficiency: O(n^2)
 
-## Merge sort
+## Shell Sort
 
-## Quick sort
+# Selection Sort
 
-## Selection sort
+## Straight Selection Sort
+
 - Description:
     + The list is divided into 2 parts: **sorted** and **unsorted**.
     + In each pass, in the unsorted sublist, the smallest element is **selected** and **exchanged** with the first element.<br><br>
     <img src="../../img-md/selection.gif" width="120px">
     <br><br>
 - Efficiency: O(n^2)
+
+## Heap Sort
+
+# Exchange Sort
+
+## Bubble Sort
+
+- Description:
+    + The list is divided into 2 parts: **sorted** and **unsorted**.
+    + In each pass, the smallest element is **bubbled** from the unsorted sublist and moved to the sorted list.<br><br>
+    <img src="../../img-md/bubble.gif" width="100px">
+    <br><br>
+- Efficiency: O(n^2)
+
+# Divide-and-Conquer
+
+## Quick Sort
+
+## Merge Sort

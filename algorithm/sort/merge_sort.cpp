@@ -10,12 +10,12 @@ int main(int argc, char const *argv[])
     {
         cin >> arr[i];
     }
-    bubbleSort(arr, size);
+    merge_sort(arr, size);
     return 0;
 }
 
 template <typename T>
-void mergeSort(T *&arr, uint32_t size)
+void merge_sort(T *&arr, uint32_t size)
 {
     
 }

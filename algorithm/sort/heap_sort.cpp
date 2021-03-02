@@ -10,12 +10,12 @@ int main(int argc, char const *argv[])
     {
         cin >> arr[i];
     }
-    heapSort(arr, size);
+    heap_sort(arr, size);
     return 0;
 }
 
 template <typename T>
-void heapSort(T *&arr, uint32_t size)
+void heap_sort(T *&arr, uint32_t size)
 {
     
 }

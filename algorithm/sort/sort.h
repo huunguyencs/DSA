@@ -14,13 +14,13 @@ template <typename T>
 void heapSort(T *&, int);
 
 template <typename T>
-void insertionSort(T *&, int);
+void straight_insertion_sort(T *&, int);
 
 template <typename T>
 void mergeSort(T *&, int);
 
 template <typename T>
-void selectionSort(T *&, int);
+void straight_selection_sort(T *&, int);
 
 template <typename T>
 void swapArr(T &a, T &b){

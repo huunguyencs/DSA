@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     {
         cin >> arr[i];
     }
-    selectionSort(arr, size);
+    straight_selection_sort(arr, size);
     for (int i = 0; i < size; i++)
     {
         cout << arr[i] << " ";
@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 }
 
 template <typename T>
-void selectionSort(T *&arr, int size)
+void straight_selection_sort(T *&arr, int size)
 {
     int current = 0;
     while (current < size - 1)

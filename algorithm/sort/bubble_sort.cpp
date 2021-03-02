@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
     {
         cin >> arr[i];
     }
-    bubbleSort(arr, size);
+    bubble_sort(arr, size);
     for (int i = 0; i < size; i++)
     {
         cout<<arr[i]<<" ";
@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 }
 
 template <typename T>
-void bubbleSort(T *&arr, int size)
+void bubble_sort(T *&arr, int size)
 {
     int current = 0;
     bool flag = false;

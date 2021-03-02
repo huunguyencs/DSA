@@ -10,12 +10,12 @@ int main(int argc, char const *argv[])
     {
         cin >> arr[i];
     }
-    quickSort(arr, size);
+    shell_sort(arr, size);
     return 0;
 }
 
 template <typename T>
-void quickSort(T *&arr, uint32_t size)
+void shell_sort(T *&arr, uint32_t size)
 {
     
 }
