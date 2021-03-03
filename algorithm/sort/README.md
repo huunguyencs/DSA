@@ -11,6 +11,19 @@
 
 ## Shell Sort
 
+- Description:
+    + Named after its creator Donald L. **Shell** (1959).
+    + Given a list of N elements, the list is divided into K **segments** (K is called the **increment**).
+    + Each segment contains N/K or more elements.
+    + Segments are dispersed throughout the list.
+    + Also is called **diminishing-increment sort**.
+
+    *Note*: Choosing incremental values:
+        + From more of the comparisons, it is better when we can receive more new information.
+        + Incremental values should not be multiples of each other, other wise, the same keys compared on one pass would be compared again at the next.
+        + The final incremental value must be 1.
+- Efficiency: O(n<sup>1.25</sup>)
+
 # Selection Sort
 
 ## Straight Selection Sort
