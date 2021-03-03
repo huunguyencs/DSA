@@ -18,9 +18,9 @@
     + Segments are dispersed throughout the list.
     + Also is called **diminishing-increment sort**.
 
-    *Note*: Choosing incremental values:
-        + From more of the comparisons, it is better when we can receive more new information.
-        + Incremental values should not be multiples of each other, other wise, the same keys compared on one pass would be compared again at the next.
+    *Note*: Choosing incremental values:<br>
+        + From more of the comparisons, it is better when we can receive more new information.<br>
+        + Incremental values should not be multiples of each other, other wise, the same keys compared on one pass would be compared again at the next.<br>
         + The final incremental value must be 1.
 - Efficiency: O(n<sup>1.25</sup>)
 
