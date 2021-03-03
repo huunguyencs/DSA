@@ -31,7 +31,7 @@ void bubble_sort(T *&arr, int size)
             if (arr[walker] < arr[walker - 1])
             {
                 flag = false;
-                swapArr(arr[walker], arr[walker - 1]);
+                swap_arr(arr[walker], arr[walker - 1]);
             }
             walker = walker - 1;
         }

@@ -33,7 +33,7 @@ void straight_selection_sort(T *&arr, int size)
                 smallest = walker;
             walker = walker + 1;
         }
-        swapArr(arr[current], arr[smallest]);
+        swap_arr(arr[current], arr[smallest]);
         current++;
     }
 }
