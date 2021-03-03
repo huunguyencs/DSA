@@ -33,7 +33,7 @@ public:
 };
 
 template <typename T>
-void swapArr(T &a, T&b){
+void swap_arr(T &a, T&b){
     T tmp = a;
     a = b;
     b = tmp;
@@ -44,7 +44,7 @@ void Heap<T>::reheapUp(int position){
     if(position > 0){
         int parent = (position - 1) / 2;
         if(this->heap[position] > this->heap[parent]){
-            swapArr(this->heap[position],this->heap[parent]);
+            swap_arr(this->heap[position],this->heap[parent]);
             reheapUp(parent);
         }
     }
@@ -62,7 +62,7 @@ void Heap<T>::reheapDown(int position){
         else
             largeChild = leftChild;
         if(this->heap[largeChild] > this->heap[position]){
-            swapArr(this->heap[largeChild],this->heap[position]);
+            swap_arr(this->heap[largeChild],this->heap[position]);
             reheapDown(largeChild);
         }
     }

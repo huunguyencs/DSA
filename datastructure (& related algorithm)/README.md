@@ -128,7 +128,7 @@
 - Why AVL tree?
     + When data elements are inserted in a BST in sorted order: 1, 2, 3, ... BST becomes a degenerate tree. Search operation takes O(n), which is inefficient.
     + It is possible that affer a number of insert and delete operations, a binary tree may become unbalanced and inscrease in height.
-    + AVL trees ensure that the complexity of search is O(log_2(n)).
+    + AVL trees ensure that the complexity of search is $O(log_2(n))$.
 
 ## Heap
 - Definition:
@@ -144,8 +144,8 @@
 
 - Properties:
     + A complete or nearly complete binary tree.
-    + If the height is *h*, the number of nodes N is between 2<sup>h-1</sup> and 2<sup>h</sup>-1.
-    + **Complete tree**: N = 2<sup>h</sup> - 1 when last level is full.
+    + If the height is *h*, the number of nodes N is between $2^{h-1}$ and $2^h-1$.
+    + **Complete tree**: $N = 2^h - 1$ when last level is full.
     + **Nearly complete**: All nodes in the last level are on the left.
 
     The relationship between a node and its children is fixed and can be calculated:
@@ -158,15 +158,15 @@
     + Given the location of the first left element, the location of last nonleaf element is 1 less.
 
 - Methods:
-    + **ReheapUp**: The **reheapUp** operation repairs a "broken" heap by **floating the last element up** the tree until it is in its correct location in the heap. Complexity O(log<sub>2</sub>n)
+    + **ReheapUp**: The **reheapUp** operation repairs a "broken" heap by **floating the last element up** the tree until it is in its correct location in the heap. Complexity $O(log_2n)$
 
-    + **ReheapDown**: The **reheapDown** operation repairs a "broken" heap by **push the root down** the tree until it is in its correct location in the heap. Complexity O(log<sub>2</sub>n)
+    + **ReheapDown**: The **reheapDown** operation repairs a "broken" heap by **push the root down** the tree until it is in its correct location in the heap. Complexity $O(log_2n)$
 
-    + **Build a heap**. Complexity O(nlog<sub>2</sub>n)
+    + **Build a heap**. Complexity $O(nlog_2n)$
 
-    + **Insert a Node into a Heap**. Complexity O(log<sub>2</sub>n)
+    + **Insert a Node into a Heap**. Complexity $O(log_2n)$
 
-    + **Delete a Node from a Heap**. Complexity O(log<sub>2</sub>n)
+    + **Delete a Node from a Heap**. Complexity $O(log_2n)$
 
 - Applications:
     + **selection algorithms**,
