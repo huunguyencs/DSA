@@ -58,4 +58,23 @@
 
 ## Quick Sort
 
+- Description:
+
+
+    The key process in quick sort is **partition**. Target of *partition* is, given an array and an element x of array as **pivot** (can be first, last, random or median element in array), put x at its correct position in sorted array and put all smaller elements before x, all greater elements after x.
+
+    <img src="../../img-md/qsort.png" width="600px"> 
+
+    <br><br>
+
+    <img src="../../img-md/quick_sort.gif">
+
+- Efficiency: O(nlog<sub>2</sub>n)
+
 ## Merge Sort
+
+- Description: **Merge sort** will divide the input array into 2 halves, calls itself for the two halves, and then merges two sorted halves.
+
+    <img src="../../img-md/merge_sort.png">
+
+- Efficiency: O(nlog<sub>2</sub>n)
