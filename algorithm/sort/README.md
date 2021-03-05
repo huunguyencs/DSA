@@ -50,7 +50,7 @@
 - Description:
     + The list is divided into 2 parts: **sorted** and **unsorted**.
     + In each pass, the smallest element is **bubbled** from the unsorted sublist and moved to the sorted list.<br><br>
-    <img src="../../img-md/bubble.gif" width="100px">
+    <img src="../../img-md/bubble.gif" width="400px">
     <br><br>
 - Efficiency: O(n<sup>2</sup>)
 
