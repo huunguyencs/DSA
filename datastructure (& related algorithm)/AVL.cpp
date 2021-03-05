@@ -1,12 +1,94 @@
-// Definition: AVL Tree is:
-// - A Binary Search Tree,
-// - in which the heights of the left and right subtrees of the root
-// differ by at most 1, and
-// - the left and right subtrees are again AVL trees.
-// Discovered by G.M.Adel'son-Vel'skii and E.M.Landis in 1962
-// -> AVL Tree is a Binary Search Tree that is balanced tree.
-
 #include "AVL.h"
+
+
+
+template <typename ItemType>
+int NodeAVL<ItemType>::getBalance()
+{
+    return this->balance;
+}
+
+template <typename ItemType>
+void NodeAVL<ItemType>::setBalance(int b)
+{
+    this->balance = b;
+}
+
+template <typename ItemType>
+ItemType NodeAVL<ItemType>::getData(){
+    return this->data;
+}
+
+template <typename ItemType>
+void NodeAVL<ItemType>::setData(ItemType data){
+    this->data = data;
+}
+
+template <typename ItemType>
+NodeAVL<ItemType>* NodeAVL<ItemType>::getLeft(){
+    return this->left;
+}
+
+template <typename ItemType>
+NodeAVL<ItemType>* NodeAVL<ItemType>::getRight(){
+    return this->right;
+}
+
+template <typename ItemType>
+void NodeAVL<ItemType>::setLeft(NodeAVL<ItemType> *left){
+    this->left = left;
+}
+
+template <typename ItemType>
+void NodeAVL<ItemType>::setRight(NodeAVL<ItemType> *right){
+    this->right = right;
+}
+
+template <typename ItemType>
+NodeAVL<ItemType> *&NodeAVL<ItemType>::refLeft(){
+    return this->left;
+}
+
+template <typename ItemType>
+NodeAVL<ItemType> *&NodeAVL<ItemType>::refRight(){
+    return this->right;
+}
+
+
+
+
+template <typename ItemType>
+bool AVLTree<ItemType>::insert(ItemType data)
+{
+    try
+    {
+        bool taller = true;
+        this->insertAVL(this->root, data, taller);
+        return true;
+    }
+    catch (const char *msg)
+    {
+        cerr << msg << endl;
+        return false;
+    }
+}
+
+template <typename ItemType>
+bool AVLTree<ItemType>::remove(ItemType data)
+{
+    try
+    {
+        bool success = false;
+        bool shorter = true;
+        this->removeAVL(this->root, data, shorter, success);
+        return success;
+    }
+    catch (const char *msg)
+    {
+        cerr << msg << endl;
+        return false;
+    }
+}
 
 template <typename ItemType>
 NodeAVL<ItemType> *AVLTree<ItemType>::rotateRight(NodeAVL<ItemType> *&subroot)
@@ -321,6 +403,8 @@ NodeAVL<ItemType> *AVLTree<ItemType>::removeLeftBalance(NodeAVL<ItemType> *&subr
     }
     return subroot;
 }
+
+
 
 int main(int argc, char const *argv[])
 {

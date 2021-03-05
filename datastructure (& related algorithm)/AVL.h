@@ -1,8 +1,14 @@
+// Definition: AVL Tree is:
+// - A Binary Search Tree,
+// - in which the heights of the left and right subtrees of the root
+// differ by at most 1, and
+// - the left and right subtrees are again AVL trees.
+// Discovered by G.M.Adel'son-Vel'skii and E.M.Landis in 1962
+// -> AVL Tree is a Binary Search Tree that is balanced tree.
+
 #include <iostream>
 using namespace std;
 
-#ifndef AST_H
-#define AST_H
 
 int const LH = -1;
 int const EH = 0;
@@ -23,38 +29,16 @@ public:
         this->right = right;
         this->balance = EH;
     }
-    int getBalance()
-    {
-        return this->balance;
-    }
-    void setBalance(int b)
-    {
-        this->balance = b;
-    }
-    ItemType getData(){
-        return this->data;
-    }
-    void setData(ItemType data){
-        this->data = data;
-    }
-    NodeAVL<ItemType>* getLeft(){
-        return this->left;
-    }
-    NodeAVL<ItemType>* getRight(){
-        return this->right;
-    }
-    void setLeft(NodeAVL<ItemType> *left){
-        this->left = left;
-    }
-    void setRight(NodeAVL<ItemType> *right){
-        this->right = right;
-    }
-    NodeAVL<ItemType>* &refLeft(){
-        return this->left;
-    }
-    NodeAVL<ItemType>* &refRight(){
-        return this->right;
-    }
+    int getBalance();
+    void setBalance(int b);
+    ItemType getData();
+    void setData(ItemType data);
+    NodeAVL<ItemType>* getLeft();
+    NodeAVL<ItemType>* getRight();
+    void setLeft(NodeAVL<ItemType> *left);
+    void setRight(NodeAVL<ItemType> *right);
+    NodeAVL<ItemType>* &refLeft();
+    NodeAVL<ItemType>* &refRight();
 };
 
 template <typename ItemType>
@@ -71,38 +55,10 @@ class AVLTree
     NodeAVL<ItemType> *removeLeftBalance(NodeAVL<ItemType> *&, bool &);
 
 public:
-    AVLTree(NodeAVL<ItemType>* root = nullptr){
+    AVLTree(NodeAVL<ItemType>* root = nullptr)
+    {
         this->root = root;
     }
-    bool insert(ItemType data)
-    {
-        try
-        {
-            bool taller = true;
-            this->insertAVL(this->root, data, taller);
-            return true;
-        }
-        catch (const char *msg)
-        {
-            cerr << msg << endl;
-            return false;
-        }
-    }
-    bool remove(ItemType data)
-    {
-        try
-        {
-            bool success = false;
-            bool shorter = true;
-            this->removeAVL(this->root, data, shorter, success);
-            return success;
-        }
-        catch (const char *msg)
-        {
-            cerr << msg << endl;
-            return false;
-        }
-    }
+    bool insert(ItemType data);
+    bool remove(ItemType data);
 };
-
-#endif
