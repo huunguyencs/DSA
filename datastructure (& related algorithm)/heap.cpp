@@ -70,10 +70,10 @@ void Heap<T>::reheapDown(int position){
 
 template <typename T>
 void Heap<T>::buildHeap(){
-    int walker = 1;
-    while(walker < this->size){
-        reheapUp(walker);
-        walker++;
+    int walker = this->size/2-1;
+    while(walker >= 0){
+        reheapDown(walker);
+        walker--;
     }
 }
 
@@ -99,11 +99,11 @@ bool Heap<T>::remove(T& dataOut){
 }
 
 
-// int main(int argc, char const *argv[])
-// {
-//     int *x = new int[7]{1,7,8,9,4,6,5};
-//     Heap<int>* h = new Heap<int>(x,7);
-//     h->print();
+int main(int argc, char const *argv[])
+{
+    int *x = new int[10]{1,7,8,9,4,6,5,10,0,-1};
+    Heap<int>* h = new Heap<int>(x,10);
+    h->print();
 
-//     return 0;
-// }
+    return 0;
+}
